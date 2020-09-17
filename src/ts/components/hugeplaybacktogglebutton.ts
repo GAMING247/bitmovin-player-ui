@@ -62,6 +62,8 @@ export class HugePlaybackToggleButton extends PlaybackToggleButton {
      * if a double click happens.
      */
     this.onClick.subscribe(() => {
+      // console.log("click");
+
       // Directly start playback on first click of the button.
       // This is a required workaround for mobile browsers where video playback needs to be triggered directly
       // by the user. A deferred playback start through the timeout below is not considered as user action and
@@ -79,12 +81,13 @@ export class HugePlaybackToggleButton extends PlaybackToggleButton {
 
       if (now - clickTime < 200) {
         // We have a double click inside the 200ms interval, just toggle fullscreen mode
-        toggleFullscreen();
+        // toggleFullscreen();
         doubleClickTime = now;
         return;
+        
       } else if (now - clickTime < 500) {
         // We have a double click inside the 500ms interval, undo playback toggle and toggle fullscreen mode
-        toggleFullscreen();
+        // toggleFullscreen();
         togglePlayback();
         doubleClickTime = now;
         return;
