@@ -84,7 +84,6 @@ export class HugePlaybackToggleButton extends PlaybackToggleButton {
         // toggleFullscreen();
         doubleClickTime = now;
         return;
-        
       } else if (now - clickTime < 500) {
         // We have a double click inside the 500ms interval, undo playback toggle and toggle fullscreen mode
         // toggleFullscreen();
